@@ -25,6 +25,8 @@ Access the web interface in your browser at http://localhost:5000.
 Flask: Web framework for Python.
 NLTK: Natural Language Toolkit for text processing.
 spaCy: NLP library for advanced text processing and entity extraction.
+
+
 Feel free to contribute, report issues, or suggest improvements!
 
 
