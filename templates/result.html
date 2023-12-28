@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #result-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        #score {
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .low-score {
+            color: red;
+        }
+
+        .medium-score {
+            color: orange;
+        }
+
+        .high-score {
+            color: green;
+        }
+
+        .suggestions {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .suggestion-item {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .result-message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="result-container">
+        <h2>Result:</h2>
+
+        <!-- Display the score -->
+        <p class="result-message">{{ result_message }}</p>
+        <p>Your resume matches the job description with a score of
+            <span id="score" class="{{ result_class }}">{{ score }}</span>.
+        </p>
+
+        <!-- Display suggestions if available -->
+        {% if suggestions %}
+            <div class="suggestions">
+                <h3>Suggestions:</h3>
+                <ul>
+                    {% for suggestion in suggestions %}
+                        <li class="suggestion-item">{{ suggestion }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <br>
+        <a href="/">Go back to the homepage</a>
+    </div>
+</body>
+</html>
